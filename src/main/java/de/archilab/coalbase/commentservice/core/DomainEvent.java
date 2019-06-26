@@ -1,0 +1,18 @@
+package de.archilab.coalbase.commentservice.core;
+
+import java.util.UUID;
+
+public abstract class DomainEvent {
+
+  private final UUID eventID;
+
+  public DomainEvent() {
+    this.eventID = UUID.randomUUID();
+  }
+
+  public abstract String getEventType();
+
+  public UUID getEventID() {
+    return this.eventID;
+  }
+}

@@ -1,0 +1,33 @@
+version: '3.4'
+
+services:
+  postgres:
+    image: postgres:10.1
+    volumes:
+      - learning_outcome_db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=_CoalbaseCommentMS_2019
+      - POSTGRES_USER=comment
+      - POSTGRES_DB=comment
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    networks:
+      - service_internal
+  springboot-service:
+    image: docker.nexus.archi-lab.io/archilab/coalbase-comment
+    environment:
+      - TZ=Europe/Berlin
+      - COMMENT_DB=postgres
+      - COMMENT_DB_NAME=comment
+      - COMMENT_DB_USER=comment
+      - COMMENT_DB_PW=_CoalbaseCommentMS_2019
+    depends_on:
+      - postgres
+    networks:
+      - service_internal
+      - coalbase_backend
+volumes:
+  learning_outcome_db: {}
+networks:
+  service_internal:
+  coalbase_backend:
+    external: true
