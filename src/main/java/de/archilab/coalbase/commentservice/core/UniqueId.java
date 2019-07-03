@@ -8,7 +8,7 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @EqualsAndHashCode
-public class UniqueId<T> implements Serializable {
+public class UniqueId implements Serializable {
 
   private static final long serialVersionUID = -7931626090547229453L;
   @Getter

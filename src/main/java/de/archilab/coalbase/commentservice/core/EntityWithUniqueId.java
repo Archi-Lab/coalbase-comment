@@ -7,14 +7,14 @@ import lombok.Getter;
 
 @EqualsAndHashCode
 @MappedSuperclass
-public abstract class EntityWithUniqueId<T> {
+public abstract class EntityWithUniqueId {
 
   @EmbeddedId
   @Getter
-  private UniqueId<T> id;
+  private UniqueId id;
 
   protected EntityWithUniqueId() {
-    this.id = new UniqueId<>();
+    this.id = new UniqueId();
   }
 
 }

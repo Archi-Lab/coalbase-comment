@@ -4,7 +4,7 @@ services:
   postgres:
     image: postgres:10.1
     volumes:
-      - learning_outcome_db:/var/lib/postgresql/data
+      - comment_db:/var/lib/postgresql/data
     environment:
       - POSTGRES_PASSWORD=_CoalbaseCommentMS_2019
       - POSTGRES_USER=comment

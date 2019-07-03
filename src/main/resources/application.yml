@@ -21,9 +21,11 @@ spring:
       indent-output: true
     deserialization:
       accept-empty-array-as-null-object: true
+  kafka:
+    group-id: "comment"
 # Server
 server:
-  port: 8082
+  port: 8083
   compression.enabled: true
   compression.mime-types: application/json,application/xml,text/html,text/xml,text/plain
 # Keycloak
@@ -35,6 +37,7 @@ keycloak:
   principal-attribute: preferred_username
 # Kafka-topic
 comment.topic: comment
+learning-outcome.topic: learning-outcome
 
 # Enable if you want to create a sql script for the db
 # spring.jpa.properties.javax.persistence.schema-generation.create-source: metadata

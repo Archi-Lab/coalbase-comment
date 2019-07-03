@@ -1,5 +1,6 @@
 package de.archilab.coalbase.commentservice.comment;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import de.archilab.coalbase.commentservice.core.EntityWithUniqueId;
 import lombok.*;
 
@@ -10,20 +11,16 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
+@Setter
 @ToString(callSuper = true)
-public class Comment extends EntityWithUniqueId<Comment> {
+public class Comment extends EntityWithUniqueId {
 
-    private String msName; // not necessary because an entity belongs to only one ms?
-
-
-    private String attachedEntitySelfLink; // Relative Self Link
-
-    private UUID attachedEntityID; // necessary for deletion?
-
+    private UUID attachedEntityId;
 
     private String attributeName;
 
+    @JsonIgnore
+    private String author;
 
-    private String content; // Content of the comment
-
+    private String content;
 }
