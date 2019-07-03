@@ -5,12 +5,13 @@ import static org.springframework.test.annotation.DirtiesContext.ClassMode.BEFOR
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import org.junit.ClassRule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.kafka.test.EmbeddedKafkaBroker;
-import org.springframework.kafka.test.context.EmbeddedKafka;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.kafka.test.rule.EmbeddedKafkaRule;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -18,14 +19,15 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 
 @RunWith(SpringRunner.class)
+@SpringBootTest
 @DirtiesContext(classMode = BEFORE_CLASS)
 @AutoConfigureMockMvc
 @Transactional
-@EmbeddedKafka(partitions = 1, topics = {"test-topic"})
 public class CoalbaseCommentApplicationTest {
 
-  @Autowired
-  private EmbeddedKafkaBroker embeddedKafka;
+  @ClassRule
+  public static final EmbeddedKafkaRule BROKER = new EmbeddedKafkaRule(1,
+      false, "test");
 
   @Autowired
   private MockMvc mvc;
