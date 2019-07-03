@@ -9,6 +9,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.kafka.test.EmbeddedKafkaBroker;
 import org.springframework.kafka.test.context.EmbeddedKafka;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.annotation.DirtiesContext;
@@ -22,6 +23,9 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 @EmbeddedKafka(partitions = 1, topics = {"test-topic"})
 public class CoalbaseCommentApplicationTest {
+
+  @Autowired
+  private EmbeddedKafkaBroker embeddedKafka;
 
   @Autowired
   private MockMvc mvc;
