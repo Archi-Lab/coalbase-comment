@@ -122,7 +122,7 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
     String associationResource = itemResource + "/**";
     httpSecurity
         .authorizeRequests()
-        //LearningOutcome (Standard endpoints provided by SDR)
+        //Comment (Standard endpoints provided by SDR)
 
         //ListResource
         .antMatchers(HttpMethod.OPTIONS, listResource)

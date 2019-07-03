@@ -26,7 +26,7 @@ services:
       - service_internal
       - coalbase_backend
 volumes:
-  learning_outcome_db: {}
+  comment_db: {}
 networks:
   service_internal:
   coalbase_backend:
