@@ -23,4 +23,11 @@ public class Comment extends EntityWithUniqueId {
     private String author;
 
     private String content;
+
+
+    public Comment(UUID attachedEntityId, String attributeName, String content) {
+        this.attachedEntityId = attachedEntityId;
+        this.attributeName = attributeName;
+        this.content = content;
+    }
 }
