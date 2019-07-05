@@ -37,25 +37,25 @@ import java.util.UUID;
 @EmbeddedKafka
 public class CommentTest {
 
-  private static final UUID entityId1 = UUID.randomUUID();
-  private static final UUID entityId2 = UUID.randomUUID();
+  private static final UUID ENTITY_Id_1 = UUID.randomUUID();
+  private static final UUID ENTITY_Id_2 = UUID.randomUUID();
 
-  private static final String attributeName = "title";
-  private static final String authorName = "Author";
+  private static final String ATTRIBUTE_NAME = "title";
+  private static final String AUTHOR_NAME = "Author";
 
-  private static final Comment comment1 = new Comment(entityId1, attributeName, authorName,
+  private static final Comment COMMENT_1 = new Comment(ENTITY_Id_1, ATTRIBUTE_NAME, AUTHOR_NAME,
       "This comment is useless");
-  private static final Comment comment2 = new Comment(entityId1, attributeName, authorName,
+  private static final Comment COMMENT_2 = new Comment(ENTITY_Id_1, ATTRIBUTE_NAME, AUTHOR_NAME,
       "This comment is useless too");
-  private static final Comment comment3 = new Comment(entityId2, attributeName, authorName,
+  private static final Comment COMMENT_3 = new Comment(ENTITY_Id_2, ATTRIBUTE_NAME, AUTHOR_NAME,
       "This comment is the most useless one");
 
   // Kafka
-  private static final String commentTopic = "comment_test";
+  private static final String COMMENT_TOPIC = "comment_test";
 
   @ClassRule
   public static final EmbeddedKafkaRule BROKER = new EmbeddedKafkaRule(1, false,
-      commentTopic);
+      COMMENT_TOPIC);
 
 
   @Autowired
@@ -76,7 +76,7 @@ public class CommentTest {
         consumerProps);
 
     ContainerProperties containerProperties = new ContainerProperties(
-        commentTopic);
+        COMMENT_TOPIC);
 
     KafkaMessageListenerContainer<String, String> container = new KafkaMessageListenerContainer<>(
         cf, containerProperties);
@@ -96,16 +96,16 @@ public class CommentTest {
 
 
   @Test
-  @WithMockUser(username = authorName, roles = {"professor"})
+  @WithMockUser(username = AUTHOR_NAME, roles = {"professor"})
   public void createComment() {
-    commentRepository.save(comment1);
+    commentRepository.save(COMMENT_1);
 
     assertEquals(commentRepository.count(), 1);
 
     Comment comment = ((List<Comment>) commentRepository.findAll()).get(0);
-    assertEquals(comment.getAttachedEntityId(), comment1.getAttachedEntityId());
-    assertEquals(comment.getAttributeName(), comment1.getAttributeName());
-    assertEquals(comment.getContent(), comment1.getContent());
+    assertEquals(comment.getAttachedEntityId(), COMMENT_1.getAttachedEntityId());
+    assertEquals(comment.getAttributeName(), COMMENT_1.getAttributeName());
+    assertEquals(comment.getContent(), COMMENT_1.getContent());
 
     commentRepository.deleteAll();
 
@@ -114,16 +114,16 @@ public class CommentTest {
 
   @Test
   public void deleteCommentsByAttachedEntityId() {
-    commentRepository.save(comment1);
-    commentRepository.save(comment2);
-    commentRepository.save(comment3);
+    commentRepository.save(COMMENT_1);
+    commentRepository.save(COMMENT_2);
+    commentRepository.save(COMMENT_3);
 
     assertEquals(commentRepository.count(), 3);
 
-    commentRepository.deleteAllByAttachedEntityId(entityId1);
+    commentRepository.deleteAllByAttachedEntityId(ENTITY_Id_1);
     assertEquals(commentRepository.count(), 1);
 
-    commentRepository.deleteAllByAttachedEntityId(entityId2);
+    commentRepository.deleteAllByAttachedEntityId(ENTITY_Id_2);
     assertEquals(commentRepository.count(), 0);
   }
 }
