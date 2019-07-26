@@ -4,4 +4,4 @@ services:
   springboot-service:
     image: docker.nexus.archi-lab.io/archilab/coalbase-comment-dev
     ports:
-      - "8080:8083"
+      - "8083:8080"
