@@ -13,10 +13,10 @@ public interface CommentRepository extends
         CrudRepository<Comment, UniqueId> {
 
     @Override
-    @PostFilter("filterObject.author == authentication.name")
+    @PostFilter("filterObject.author.userName == authentication.name")
     Iterable<Comment> findAll();
 
-    @PostFilter("filterObject.author == authentication.name")
+    @PostFilter("filterObject.author.userName == authentication.name")
     Iterable<Comment> findByAttachedEntityIdAndAttributeName(UUID attachedEntityId, String attributeName);
 
     void deleteAllByAttachedEntityId(UUID attachedEntityId);

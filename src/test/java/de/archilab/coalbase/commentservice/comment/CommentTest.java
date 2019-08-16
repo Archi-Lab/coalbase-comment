@@ -42,12 +42,13 @@ public class CommentTest {
 
   private static final String ATTRIBUTE_NAME = "title";
   private static final String AUTHOR_NAME = "Author";
+  private static final CommentAuthor AUTHOR = new CommentAuthor(AUTHOR_NAME, "Au", "ther");
 
-  private static final Comment COMMENT_1 = new Comment(ENTITY_Id_1, ATTRIBUTE_NAME, AUTHOR_NAME,
+  private static final Comment COMMENT_1 = new Comment(ENTITY_Id_1, ATTRIBUTE_NAME, AUTHOR,
       "This comment is useless");
-  private static final Comment COMMENT_2 = new Comment(ENTITY_Id_1, ATTRIBUTE_NAME, AUTHOR_NAME,
+  private static final Comment COMMENT_2 = new Comment(ENTITY_Id_1, ATTRIBUTE_NAME, AUTHOR,
       "This comment is useless too");
-  private static final Comment COMMENT_3 = new Comment(ENTITY_Id_2, ATTRIBUTE_NAME, AUTHOR_NAME,
+  private static final Comment COMMENT_3 = new Comment(ENTITY_Id_2, ATTRIBUTE_NAME, AUTHOR,
       "This comment is the most useless one");
 
   // Kafka

@@ -11,6 +11,9 @@ public class CommentEventHandler {
   @HandleBeforeCreate
   public void setAuthorBeforeCreate(Comment comment) {
     String name = SecurityContextHolder.getContext().getAuthentication().getName();
-    comment.setAuthor(name);
+    if (comment.getAuthor() == null) {
+      comment.setAuthor(new CommentAuthor());
+    }
+    comment.getAuthor().setUserName(name);
   }
 }
