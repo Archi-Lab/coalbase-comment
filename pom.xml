@@ -9,7 +9,7 @@
   </parent>
 
   <groupId>io.archilab.coalbase</groupId>
-  <artifactId>comment</artifactId>
+  <artifactId>coalbase-comment</artifactId>
   <version>${revision}${changelist}</version>
 
   <name>coalbase-comment</name>
