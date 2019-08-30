@@ -1,6 +1,6 @@
-package io.archilab.coalbase.commentservice.comment;
+package io.archilab.coalbase.comment.comment;
 
-import io.archilab.coalbase.commentservice.core.UniqueId;
+import io.archilab.coalbase.comment.core.UniqueId;
 import java.util.UUID;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;

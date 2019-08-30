@@ -1,6 +1,6 @@
-package io.archilab.coalbase.commentservice.comment;
+package io.archilab.coalbase.comment.comment;
 
-import io.archilab.coalbase.commentservice.core.EntityWithUniqueId;
+import io.archilab.coalbase.comment.core.EntityWithUniqueId;
 import java.util.Date;
 import java.util.UUID;
 import javax.persistence.Basic;

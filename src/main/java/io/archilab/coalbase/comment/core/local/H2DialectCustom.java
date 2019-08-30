@@ -1,4 +1,4 @@
-package io.archilab.coalbase.commentservice.core.local;
+package io.archilab.coalbase.comment.core.local;
 
 import java.sql.Types;
 import org.hibernate.dialect.H2Dialect;

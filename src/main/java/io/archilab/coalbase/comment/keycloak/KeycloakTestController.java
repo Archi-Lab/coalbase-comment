@@ -1,4 +1,4 @@
-package io.archilab.coalbase.commentservice.keycloak;
+package io.archilab.coalbase.comment.keycloak;
 
 import java.security.Principal;
 import org.slf4j.LoggerFactory;

@@ -1,8 +1,8 @@
-package io.archilab.coalbase.commentservice.learningoutcome;
+package io.archilab.coalbase.comment.learningoutcome;
 
 
-import io.archilab.coalbase.commentservice.core.DomainEvent;
-import io.archilab.coalbase.commentservice.core.UniqueId;
+import io.archilab.coalbase.comment.core.DomainEvent;
+import io.archilab.coalbase.comment.core.UniqueId;
 
 public class LearningOutcomeDomainEvent extends DomainEvent {
 

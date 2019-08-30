@@ -1,4 +1,4 @@
-package io.archilab.coalbase.commentservice.keycloak;
+package io.archilab.coalbase.comment.keycloak;
 
 import org.keycloak.adapters.KeycloakConfigResolver;
 import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver;

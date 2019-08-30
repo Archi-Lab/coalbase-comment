@@ -1,8 +1,8 @@
-package io.archilab.coalbase.commentservice.kafka;
+package io.archilab.coalbase.comment.kafka;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.archilab.coalbase.commentservice.core.DomainEvent;
+import io.archilab.coalbase.comment.core.DomainEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package io.archilab.coalbase.commentservice.core;
+package io.archilab.coalbase.comment.core;
 
 import java.io.Serializable;
 import org.springframework.data.rest.webmvc.spi.BackendIdConverter;

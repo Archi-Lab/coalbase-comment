@@ -1,4 +1,4 @@
-package io.archilab.coalbase.commentservice;
+package io.archilab.coalbase.comment;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

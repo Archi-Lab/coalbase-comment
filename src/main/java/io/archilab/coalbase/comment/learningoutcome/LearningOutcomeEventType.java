@@ -1,4 +1,4 @@
-package io.archilab.coalbase.commentservice.learningoutcome;
+package io.archilab.coalbase.comment.learningoutcome;
 
 public enum LearningOutcomeEventType {
   CREATED, UPDATED, DELETED

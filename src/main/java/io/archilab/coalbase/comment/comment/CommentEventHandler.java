@@ -1,4 +1,4 @@
-package io.archilab.coalbase.commentservice.comment;
+package io.archilab.coalbase.comment.comment;
 
 import org.springframework.data.rest.core.annotation.HandleBeforeCreate;
 import org.springframework.data.rest.core.annotation.RepositoryEventHandler;

@@ -1,4 +1,4 @@
-package io.archilab.coalbase.commentservice.kafka;
+package io.archilab.coalbase.comment.kafka;
 
 import java.util.HashMap;
 import java.util.Map;

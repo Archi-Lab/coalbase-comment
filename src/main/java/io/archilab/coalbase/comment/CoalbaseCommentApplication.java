@@ -1,4 +1,4 @@
-package io.archilab.coalbase.commentservice;
+package io.archilab.coalbase.comment;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package io.archilab.coalbase.commentservice.comment;
+package io.archilab.coalbase.comment.comment;
 
 import static org.junit.Assert.assertEquals;
 
