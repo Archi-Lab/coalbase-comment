@@ -10,4 +10,4 @@ COPY ${DEPENDENCY}/META-INF /app/META-INF
 COPY ${DEPENDENCY}/BOOT-INF/classes /app
 
 ENTRYPOINT ["java","-Xms128m","-Xmx750m","-Dspring.profiles.active=prod","-cp","app:app/lib/*",\
-  "io.archilab.coalbase.comment.CoalbaseCommentApplication"]
+  "io.archilab.coalbase.commentservice.CoalbaseCommentApplication"]
