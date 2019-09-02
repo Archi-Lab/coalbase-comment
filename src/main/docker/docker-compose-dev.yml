@@ -4,8 +4,7 @@ services:
   springboot-service:
     image: docker.nexus.archi-lab.io/archilab/coalbase-comment-dev
     environment:
-      - environment:
-          - TZ=Europe/Berlin
-          - SPRING_PROFILES_ACTIVE=dev
+      - TZ=Europe/Berlin
+      - SPRING_PROFILES_ACTIVE=dev
     ports:
       - "8083:8080"

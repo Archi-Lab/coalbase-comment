@@ -26,9 +26,8 @@ services:
         max_attempts: 3
         window: 120s
     environment:
-      - environment:
-          - TZ=Europe/Berlin
-          - SPRING_PROFILES_ACTIVE=prod
+      - TZ=Europe/Berlin
+      - SPRING_PROFILES_ACTIVE=prod
     networks:
       - coalbase_backend
 #    logging:
